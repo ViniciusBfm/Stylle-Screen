@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'">
+<title>StylleScreen HD</title>
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+
+<header class="top">
+  <div class="brand">
+    <img class="brand-mark" src="../assets/icon.png" alt="">
+    <span>Stylle<span class="grad">Screen</span></span><span class="hd">HD</span>
+  </div>
+  <span class="version" id="version"></span>
+</header>
+
+<main>
+  <section class="hero card">
+    <h1>Capture, anote e <span class="grad">copie</span> em segundos</h1>
+    <p class="muted">Selecione uma área da tela, coloque setas, quadrados e textos, e cole onde quiser com <kbd>Ctrl</kbd> + <kbd>V</kbd>.</p>
+    <button id="btnCapture" class="btn-main">
+      <svg viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3"/></svg>
+      Capturar agora
+    </button>
+    <p class="shortcut">Ou aperte <kbd id="hkLabel">Ctrl + Alt + S</kbd> em qualquer lugar</p>
+    <p id="hkError" class="error hidden">Esse atalho está sendo usado por outro programa. Escolha outro logo abaixo.</p>
+  </section>
+
+  <section class="card">
+    <h2>Atalho de captura</h2>
+    <select id="hotkey"></select>
+    <p id="psTip" class="muted small hidden">Se a tecla Print Screen abrir a Ferramenta de Captura do Windows, desligue a opção
+      “Usar a tecla Print Screen para abrir a captura de tela” e reinicie o StylleScreen HD.
+      <button id="btnKeyboard" class="link">Abrir essa configuração</button></p>
+  </section>
+
+  <section class="card">
+    <h2>Geral</h2>
+    <label class="row"><span><b>Iniciar com o Windows</b><small id="startNote">Fica pronto na bandeja assim que o PC liga.</small></span><input type="checkbox" id="startWithWindows" class="switch"></label>
+    <label class="row"><span><b>Perguntar onde salvar</b><small>Desligado, salva direto na pasta abaixo.</small></span><input type="checkbox" id="askWhereToSave" class="switch"></label>
+    <label class="row"><span><b>Mostrar aviso ao copiar e salvar</b><small>Aquela mensagem no canto da tela.</small></span><input type="checkbox" id="notify" class="switch"></label>
+  </section>
+
+  <section class="card">
+    <h2>Pasta das capturas</h2>
+    <div class="path" id="saveDir"></div>
+    <div class="actions">
+      <button id="btnChoose" class="btn-ghost">Alterar pasta</button>
+      <button id="btnOpen" class="btn-ghost">Abrir pasta</button>
+    </div>
+  </section>
+
+  <section class="card keys">
+    <h2>Na tela de captura</h2>
+    <ul>
+      <li><kbd>Enter</kbd> ou <kbd>Ctrl</kbd>+<kbd>C</kbd><span>copia a imagem</span></li>
+      <li><kbd>Ctrl</kbd>+<kbd>S</kbd><span>salva e copia</span></li>
+      <li><kbd>Ctrl</kbd>+<kbd>Z</kbd><span>desfaz</span></li>
+      <li><kbd>Esc</kbd><span>cancela</span></li>
+      <li><kbd>R</kbd> <kbd>E</kbd> <kbd>A</kbd> <kbd>L</kbd> <kbd>P</kbd> <kbd>H</kbd> <kbd>T</kbd> <kbd>N</kbd> <kbd>B</kbd><span>retângulo, círculo, seta, linha, lápis, marca-texto, texto, número, desfoque</span></li>
+      <li><kbd>Shift</kbd><span>segure para quadrado perfeito e setas retas</span></li>
+    </ul>
+  </section>
+
+  <p class="foot muted small">Fechar esta janela não encerra o app: ele continua no ícone perto do relógio. Para sair, clique com o botão direito nele.</p>
+</main>
+
+<script src="home.js"></script>
+</body>
+</html>

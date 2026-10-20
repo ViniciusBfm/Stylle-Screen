@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob: data:; style-src 'self' 'unsafe-inline'">
+<title>StylleScreen HD</title>
+<link rel="stylesheet" href="overlay.css">
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<div id="hint" class="hint hidden">Arraste para selecionar · clique para a tela inteira · <b>Esc</b> para sair</div>
+<div id="size" class="size hidden"></div>
+<textarea id="textInput" class="text-input hidden" spellcheck="false"></textarea>
+
+<div id="bar" class="bar hidden">
+  <div class="group">
+    <button data-tool="move" title="Ajustar seleção (V)"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M12 3 9 6m3-3 3 3M12 21l-3-3m3 3 3-3M3 12l3-3m-3 3 3 3M21 12l-3-3m3 3-3 3"/></svg></button>
+    <button data-tool="rect" title="Retângulo (R)"><svg viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="13" rx="1.5"/></svg></button>
+    <button data-tool="ellipse" title="Círculo (E)"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="8.5" ry="7"/></svg></button>
+    <button data-tool="arrow" title="Seta (A)"><svg viewBox="0 0 24 24"><path d="M5 19 18 6M10 6h8v8"/></svg></button>
+    <button data-tool="line" title="Linha (L)"><svg viewBox="0 0 24 24"><path d="M5 19 19 5"/></svg></button>
+    <button data-tool="pen" title="Lápis (P)"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19l-4 1Z"/></svg></button>
+    <button data-tool="marker" title="Marca-texto (H)"><svg viewBox="0 0 24 24"><path d="m9 11-5 5v4h8l3-3"/><path d="m20 11-5 5-7-7 5-5 7 7Z"/></svg></button>
+    <button data-tool="text" title="Texto (T)"><svg viewBox="0 0 24 24"><path d="M5 7V5h14v2M12 5v14M9 19h6"/></svg></button>
+    <button data-tool="step" title="Numeração (N)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M10.5 9.5 12.5 8v8"/></svg></button>
+    <button data-tool="blur" title="Desfocar / esconder (B)"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 9.3h16M4 14.7h16M9.3 4v16M14.7 4v16"/></svg></button>
+  </div>
+  <div class="sep"></div>
+  <div class="group" id="colors"></div>
+  <div class="sep"></div>
+  <div class="group" id="sizes"></div>
+  <div class="sep"></div>
+  <div class="group">
+    <button id="btnUndo" title="Desfazer (Ctrl+Z)"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+    <button id="btnCancel" title="Cancelar (Esc)"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <button id="btnSave" class="wide" title="Salvar e copiar (Ctrl+S)"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Salvar</button>
+    <button id="btnCopy" class="main" title="Copiar (Enter ou Ctrl+C)"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>Copiar</button>
+  </div>
+</div>
+
+<script src="overlay.js"></script>
+</body>
+</html>
